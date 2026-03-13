@@ -10,7 +10,7 @@
 
 <div class="inner">
 <h3>120</h3>
-<p>Oliver</p>
+<p>Certificados Gamea</p>
 </div>
 
 <div class="icon">
