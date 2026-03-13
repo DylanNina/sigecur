@@ -1,7 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
+@if(session('success'))
 
+<div class="alert alert-success alert-dismissible fade show">
+
+{{ session('success') }}
+
+<button type="button" class="close" data-dismiss="alert">
+<span>&times;</span>
+</button>
+
+</div>
+
+@endif
 <div class="card card-primary">
 
 <div class="card-header">
@@ -11,22 +23,21 @@
 <div class="card-body">
 
 <!-- NAV TABS -->
-<ul class="nav nav-tabs" id="participantsTab" role="tablist">
+<ul class="nav nav-tabs" id="participantsTab">
 
 <li class="nav-item">
-<a class="nav-link active" id="manual-tab" data-toggle="tab" href="#manual" role="tab">
+<a class="nav-link active" data-bs-toggle="tab" href="#manual">
 Registro Manual
 </a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link" id="csv-tab" data-toggle="tab" href="#csv" role="tab">
+<a class="nav-link" data-bs-toggle="tab" href="#csv">
 Importar CSV
 </a>
 </li>
 
 </ul>
-
 <div class="tab-content mt-3">
 
 <!-- REGISTRO MANUAL -->

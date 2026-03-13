@@ -37,6 +37,6 @@ Route::get('/usuarios', function () {
     return view('usuarios.index');
 });
 
-Route::post('/participantes/store', [ParticipantController::class,'store']);
+Route::post('/participantes/store', [ParticipantesController::class,'store']);
 
-Route::post('/participantes/importar', [ParticipantController::class,'import']);
+Route::post('/participantes/import', [ParticipantesController::class,'import']);
