@@ -10,7 +10,7 @@
 
 <div class="inner">
 <h3>120</h3>
-<p>Certificados</p>
+<p>Oliver</p>
 </div>
 
 <div class="icon">
