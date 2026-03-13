@@ -1,0 +1,17 @@
+.navbar-custom {
+    background-color: #e10a17;
+}
+
+.navbar-custom .nav-link{
+color: #e8f0fe;
+}
+
+/* color cuando pasas el mouse */
+.navbar-custom .nav-link:hover{
+color:#e8f0fe;
+}
+
+.sidebar-custom{
+background-color:#1f2937;
+}
+
