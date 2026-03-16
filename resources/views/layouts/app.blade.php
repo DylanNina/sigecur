@@ -75,7 +75,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4 sidebar-custom">
 
             <a href="#" class="brand-link text-center">
-                <span class="brand-text font-weight-light">SIGIGZ</span>
+                <span class="brand-text font-weight-light">GAMEA</span>
             </a>
 
             <div class="sidebar">
