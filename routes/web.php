@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourseController;
 
 Route::get('/', function () {
     return view('dashboard.index');
@@ -21,9 +22,7 @@ Route::get('/certificados/create', function () {
 Route::get('/verify', function () {
     return view('verify.verify');
 });
-Route::get('/cursos', function () {
-    return view('cursos.index');
-});
+Route::resource('cursos', CourseController::class);
 
 Route::get('/participantes', function () {
     return view('participantes.index');
@@ -37,6 +36,3 @@ Route::get('/usuarios', function () {
     return view('usuarios.index');
 });
 
-Route::post('/participantes/store', [ParticipantesController::class,'store']);
-
-Route::post('/participantes/import', [ParticipantesController::class,'import']);
