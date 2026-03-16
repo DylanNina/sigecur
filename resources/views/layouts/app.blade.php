@@ -13,6 +13,9 @@
 
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -30,7 +33,8 @@
             </ul>
 
             <li class="nav-item d-flex align-items-center">
-                <img src="{{ asset('images/logo_alcaldia.webp') }}" alt="Logo" style="height:30px; margin-left:10px;">
+                <img src="{{ asset('images/logo_alcaldia.webp') }}" alt="Logo"
+                    style="height:30px; margin-left:10px;">
             </li>
 
             <ul class="navbar-nav ml-auto">
@@ -179,7 +183,48 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(function() {
+            $("#tablaCursos").DataTable();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+
+@if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Correcto',
+            text: '{{ session('success') }}',
+            timer: 2000,
+            showConfirmButton: false
+        })
+    </script>
+    <script>
+        $('.btnEliminar').click(function(e) {
+
+            e.preventDefault();
+
+            let form = $(this).closest('form');
+
+            Swal.fire({
+                title: '¿Eliminar curso?',
+                text: 'No podrás revertir esto',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sí eliminar'
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+
+            })
+
+        });
+    </script>
+@endif
 
 </html>
